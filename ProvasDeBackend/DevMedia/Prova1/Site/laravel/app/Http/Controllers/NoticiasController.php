@@ -36,7 +36,7 @@ class NoticiasController extends BaseController
                 view: 'paginas.index',
                 data: [
                     'sessionMensagem' => $sessionMensagem,
-                    'listaDeNoticias' => Noticia::all()
+                    'listaDeNoticias' => Noticia::query()->orderBy('updated_at', 'desc')->get()
                 ]
             );
         }
@@ -69,6 +69,36 @@ class NoticiasController extends BaseController
                 ]
             );
         }
+
+
+        public function exibirNoticia(Request $request)
+        {
+            $id = $request->query('id');
+            $query = DB::table('relacoes')->where('noticia_identification', '=', $id)->get();
+    
+    
+            // Checando se a query retornou algum valor
+            if ($query->isEmpty() ) {
+                // Caso esteja vazia
+                $request->session()->flash('mensagem', "A noticia de ID  \" $id \"  não existe.");
+                return redirect('index');
+            }
+    
+            
+            [$categoria_id, $noticiaId] = [$query[0]->categoria_identification, $query[0]->noticia_identification ];
+    
+            $categoria = Categoria::find($categoria_id);
+            $noticia = Noticia::find($noticiaId);
+    
+            return view(
+                view: 'paginas.exibirNoticia',
+                data: [
+                    'noticiaEspecifica' => $noticia,
+                    'categoriaEspecifica' => [$categoria]
+                ]
+            );
+        }
+
 
 
     // ↑↑↑ FUNÇÕES PARA CARREGAR PÁGINAS ↑↑↑
@@ -199,6 +229,11 @@ class NoticiasController extends BaseController
                     if ($request->get('ehAtualizacao') === '1' ) {
                         $noticiaId = $request->get('id');
                         $noticia = Noticia::find($noticiaId);
+
+                        // Verifica se houve mudanças em algum campo ou se há alguma imagem a fazer upload
+                        if ($noticia->noticia_titulo === $request->get('noticia_titulo') && ( $noticia->noticia_descricao === $request->get('noticia_descricao') || $request->hasFile('imagemNoticia') )  )  {
+                            return redirect('index');
+                        }
         
                         $noticia->noticia_titulo = $request->get('noticia_titulo');
                         $noticia->noticia_descricao = $request->get('noticia_descricao');
@@ -220,43 +255,42 @@ class NoticiasController extends BaseController
         
                         $noticia->save();
         
-                        $request->session()->flash('mensagem', 'A noticia  \" ' . $noticia->noticia_titulo . ' \"  foi atualizada com sucesso.');
+                        $request->session()->flash('mensagem', 'A noticia  " ' . $noticia->noticia_titulo . ' "  foi atualizada com sucesso.');
+                        return redirect('index');
                     }
         
                 }
             }
         
-        
-            public function exibirNoticia(Request $request)
-            {
-                $id = $request->query('id');
-                $query = DB::table('categorias-noticias')->where('noticia_identification', '=', $id)->get();
-        
-        
-                // Checando se a query retornou algum valor
-                if ($query->isEmpty() ) {
-                    // Caso esteja vazia
-                    $request->session()->flash('mensagem', "A noticia de ID  \" $id \"  não existe.");
-                    return redirect('index');
-                }
-        
-                
-                [$categoria_id, $noticiaId] = [$query[0]->categoria_identification, $query[0]->noticia_identification ];
-        
-                $categoria = Categoria::find($categoria_id);
-                $noticia = Noticia::find($noticiaId);
-        
-                return view(
-                    view: 'paginas.exibirNoticia',
-                    data: [
-                        'noticiaEspecifica' => $noticia,
-                        'categoriaEspecifica' => [$categoria]
-                    ]
-                );
-            }
 
 
         // ↑↑↑ POST ATUALIZAÇÃO ↑↑↑
+
+
+
+        // ↓↓↓ POST PESQUISA ↓↓↓
+
+
+
+        public function pesquisaQuery(Request $request)
+        {
+            // Mensagem de verificação da pesquisa feita
+            $pesquisaQuery = $request->get('pesquisaQuery');
+            $query = DB::table('noticias')->where('noticia_titulo', 'LIKE', "%$pesquisaQuery%")->orWhere('noticia_descricao', 'LIKE', "%$pesquisaQuery%")->orderByDesc('updated_at')->get();
+
+
+            return view(
+                view: 'paginas.index',
+                data: [
+                    'pesquisaQuery' => $pesquisaQuery,
+                    'listaDeNoticias' => $query
+                ]
+            );
+        }
+
+        
+
+        // ↑↑↑ POST PESQUISA ↑↑↑
 
 
 

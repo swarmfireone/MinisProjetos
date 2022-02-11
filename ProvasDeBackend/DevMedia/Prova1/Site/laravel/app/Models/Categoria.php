@@ -30,7 +30,7 @@ class Categoria extends Model
     {
         return $this->belongsToMany(
             related: Noticia::class,
-            table: 'Categorias-Noticias',
+            table: 'Relacoes',
             foreignPivotKey: 'categoria_identification',
             relatedPivotKey: 'noticia_identification'
         );

@@ -23,8 +23,14 @@
         <nav class="bg-custom-1 navbar navbar-expand-lg text-uppercase" id="mainNav">
 
             <div id="navbar-logo px-2 mr-3">
-                <a href="#" class="navbar-brand">
-                    Logo-Brand
+                <a href="https://www.linkedin.com/in/mateus-lazarus/" class="navbar-brand font-italic">
+                    <div>
+                        <div id="mateus-lazarus-0"></div>
+                        <div id="mateus-lazarus-1"></div>
+                        <span id="mateus-lazarus-2">L</span>
+                        <span id="mateus-lazarus-3">azarus</span>
+                        <span id="mateus-lazarus-4">Backend</span>
+                    </div>
                 </a>
             </div>
 
@@ -50,7 +56,7 @@
 
                 <form method="POST" class="text-search form-inline">
                     @csrf
-                    <input class="form-control mr-sm-2" size="15" type="search" placeholder="Nome da notícia" aria-label="Search" required>
+                    <input class="form-control mr-sm-2" type="search" name="pesquisaQuery" size="15" placeholder="Nome da notícia" aria-label="Search" required>
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </div>

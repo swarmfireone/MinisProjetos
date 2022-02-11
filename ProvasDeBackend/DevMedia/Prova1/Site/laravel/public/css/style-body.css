@@ -50,16 +50,19 @@ body {
 }
 
 .capa-da-noticia {
+  min-height: 350px;
+  max-height: 350px;
   background-size: 233%;
   background-repeat-x: no-repeat;
   background-clip: content-box;
 }
 
 .capa-da-noticia #tituloNoticia {
-  text-shadow: 1px 1px 3px white;
+  color: #e7e7e7;
+  text-shadow: 1px 1px 3px #000000;
   font-size: 1.8em;
-  background: -webkit-gradient(linear, left top, right top, from(#00000080), color-stop(transparent), color-stop(#00000042), color-stop(transparent), to(#00000080));
-  background: linear-gradient(90deg, #00000080, transparent, #00000042, transparent, #00000080);
+  background: -webkit-gradient(linear, left top, right top, from(#00000090), color-stop(transparent), color-stop(#00000050), color-stop(transparent), to(#00000090));
+  background: linear-gradient(90deg, #00000090, transparent, #00000050, transparent, #00000090);
 }
 
 .capa-da-noticia .card-body {
@@ -86,12 +89,14 @@ body {
 }
 
 .capa-da-noticia:hover #tituloNoticia {
+  color: #161616;
+  text-shadow: 1px 1px 3px #e7e7e7;
   text-shadow: 0 0 transparent;
   font-size: 1.4em;
   background: none;
-  -webkit-transition: all 0.5s;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: all 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .capa-da-noticia:hover .card-body {
@@ -128,5 +133,13 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.session-mensagem {
+  font-size: 1.3em;
+}
+
+.pesquisa-mensagem {
+  font-size: 1.4em;
 }
 /*# sourceMappingURL=style-body.css.map */

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap");
 .bg-custom-1 {
   background: linear-gradient(45deg, #69b9c5, #9ed3db, #69b9c5) !important;
 }
@@ -31,5 +32,128 @@
   color: #0000;
   font-family: 'Source Serif 4', sans-serif;
   font-weight: 400;
+}
+
+@media (min-width: 1200px) {
+  #mateus-lazarus-0 {
+    width: 220px;
+    height: 4.75px;
+    color: black;
+  }
+  #mateus-lazarus-1 {
+    position: absolute;
+    left: 0px;
+    width: 210px;
+    background: black;
+    height: 4.75px;
+  }
+  #mateus-lazarus-2 {
+    color: floralwhite;
+    font-size: 97px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: -36px;
+  }
+  #mateus-lazarus-3 {
+    color: floralwhite;
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: -11px;
+    left: 51px;
+  }
+  #mateus-lazarus-4 {
+    color: floralwhite;
+    font-size: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: 32px;
+    left: 72px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #mateus-lazarus-0 {
+    width: 220px;
+    height: 4.75px;
+    color: black;
+  }
+  #mateus-lazarus-1 {
+    position: absolute;
+    left: 0px;
+    width: 210px;
+    background: black;
+    height: 4.75px;
+  }
+  #mateus-lazarus-2 {
+    color: floralwhite;
+    font-size: 97px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: -21px;
+  }
+  #mateus-lazarus-3 {
+    color: floralwhite;
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: 3px;
+    left: 51px;
+  }
+  #mateus-lazarus-4 {
+    color: floralwhite;
+    font-size: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: 48px;
+    left: 72px;
+  }
+}
+
+@media (max-width: 992px) {
+  #mateus-lazarus-0 {
+    width: 165px;
+    height: 4.75px;
+    color: black;
+  }
+  #mateus-lazarus-1 {
+    position: absolute;
+    left: 0px;
+    width: 173px;
+    background: black;
+    height: 2.75px;
+  }
+  #mateus-lazarus-2 {
+    color: floralwhite;
+    font-size: 68px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: -27px;
+  }
+  #mateus-lazarus-3 {
+    color: floralwhite;
+    font-size: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: -11px;
+    left: 46px;
+  }
+  #mateus-lazarus-4 {
+    color: floralwhite;
+    font-size: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    left: 59px;
+  }
 }
 /*# sourceMappingURL=style-header.css.map */

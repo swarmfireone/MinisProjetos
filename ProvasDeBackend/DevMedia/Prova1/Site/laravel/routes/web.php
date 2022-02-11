@@ -65,6 +65,12 @@ use App\Http\Controllers\NoticiasController;
 
 
     Route::post(
+        '/index',
+        [NoticiasController::class, 'pesquisaQuery']
+    );
+
+
+    Route::post(
         '/criar-categoria',
         [NoticiasController::class, 'createCategoria']
     );

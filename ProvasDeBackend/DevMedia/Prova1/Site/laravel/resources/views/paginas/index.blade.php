@@ -31,16 +31,27 @@
 
 
 
-    <section class="py-1 py-sm-2 py-md-3 py-xl-5">
-        <!-- Mensagem sobre ação realizada -->
+    <section class="py-1 py-sm-2 py-md-3 py-xl-2">
         @if (!empty($sessionMensagem) )
-            <div class="alert alert-success font-italic">
+            <!-- Mensagem sobre ação realizada -->
+            <div class="alert alert-success session-mensagem font-italic">
                 <span>
                     {{ $sessionMensagem }}
                 </span>
             </div>
         @endif
+
+
+        @if (!empty($pesquisaQuery) )
+            <!-- Mensagem sobre ação realizada -->
+            <div class="px-3 py-2 pesquisa-mensagem font-italic">
+                <span>
+                    Pequisa por "<strong>{{ $pesquisaQuery }}</strong>"
+                </span>
+            </div>
+        @endif
         
+
 
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">

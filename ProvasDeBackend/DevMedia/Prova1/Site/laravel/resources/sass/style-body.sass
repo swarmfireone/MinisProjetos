@@ -64,15 +64,18 @@ body
 
 // Capa da noticia, informações estáticas
 .capa-da-noticia
+    min-height: 350px
+    max-height: 350px
     background-size: 233%
     background-repeat-x: no-repeat
     background-clip: content-box
 
 
     #tituloNoticia
-        text-shadow: 1px 1px 3px white
+        color: #e7e7e7
+        text-shadow: 1px 1px 3px #000000
         font-size: 1.8em
-        background: linear-gradient(90deg, #00000080, transparent, #00000042, transparent, #00000080)
+        background: linear-gradient(90deg, #00000090, transparent, #00000050, transparent, #00000090)
     
     .card-body
         // display: none
@@ -99,11 +102,13 @@ body
     background: linear-gradient(180deg, #ffffff, #d3d3d3)
 
     #tituloNoticia
+        color: #161616
+        text-shadow: 1px 1px 3px #e7e7e7
         text-shadow: 0 0 transparent
         font-size: 1.4em
         background: none
-        -webkit-transition: all 0.5s
-        transition: 0.5s
+        -webkit-transition: all 0.4s
+        transition: 0.4s
     
     .card-body
         opacity: 100%
@@ -141,3 +146,12 @@ body
     user-select: none // Non-prefixed version, currently
                        // supported by Chrome, Edge, Opera and Firefox //
 
+
+
+.session-mensagem
+    font-size: 1.3em
+
+
+
+.pesquisa-mensagem
+    font-size: 1.4em

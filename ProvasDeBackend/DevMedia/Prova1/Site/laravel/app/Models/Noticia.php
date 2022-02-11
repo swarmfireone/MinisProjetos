@@ -33,7 +33,7 @@ class Noticia extends Model
     {
         return $this->belongsToMany(
             related: Categoria::class,
-            table: 'Categorias-Noticias',
+            table: 'Relacoes',
             foreignPivotKey: 'noticia_identification',      // A ForeignKey que é composta pela Entidade Noticia
             relatedPivotKey: 'categoria_identification'     // A outra ForeignKey que dá a relação de Many To Many, ligada a outra Entidade   
         );
