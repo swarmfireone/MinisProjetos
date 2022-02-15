@@ -14,7 +14,7 @@
             <div class="form-group py-2">
                 <label for="tituloDaNoticia" class="text-form">*Título da Notícia :</label>
                 <input type="hidden" name="type" value="noticia">
-                <input id="tituloDaNoticia" name="noticia_titulo" type="text" class="form-control" placeholder="As enchentes na Bahia" required="">
+                <input id="tituloDaNoticia" name="noticia_titulo" type="text" class="form-control" maxlength="40" placeholder="As enchentes na Bahia" required="">
                 <small class="form-text text-muted">O limite são de 40 caracteres</small>
             </div>
         
@@ -37,7 +37,7 @@
             
             <div class="form-group py-1">
                 <label for="descricaoDaNoticia" class="text-form">*Descrição :</label>
-                <textarea id="descricaoDaNoticia" name="noticia_descricao" class="form-control" placeholder="As enchentes que ocorreram no dia 24/10/2021 na região Nordeste do país deixou inúmeros ..." required="" rows="2"></textarea>
+                <textarea id="descricaoDaNoticia" name="noticia_descricao" class="form-control" maxlength="300" placeholder="As enchentes que ocorreram no dia 24/10/2021 na região Nordeste do país deixou inúmeros ..." required="" rows="2"></textarea>
             </div>
 
 

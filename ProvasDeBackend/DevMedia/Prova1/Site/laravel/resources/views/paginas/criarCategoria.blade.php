@@ -26,7 +26,7 @@
                 <div class="form-group py-2">
                     <label for="categoriaNova" class="text-form">*Nome da Categoria :</label>
                     <input type="hidden" name="type" value="categoria">
-                    <input id="categoriaNova" name="categoria_nome" type="text" class="form-control" placeholder="Esportes" required="">
+                    <input id="categoriaNova" name="categoria_nome" type="text" class="form-control" maxlength="20" placeholder="Esportes" required="">
 
                     <small class="form-text text-muted">O limite são de 20 caracteres</small>
                 </div>

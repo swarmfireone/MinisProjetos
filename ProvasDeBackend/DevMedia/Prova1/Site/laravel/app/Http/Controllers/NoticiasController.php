@@ -20,9 +20,9 @@ class NoticiasController extends BaseController
         public function paginaTeste(Request $request)
         {
             return view(
-                'untitled-2',
+                'paginaExemplo',
                 [
-                    'listaDeNoticias' => Noticia::all()
+                    
                 ]
             );
         }

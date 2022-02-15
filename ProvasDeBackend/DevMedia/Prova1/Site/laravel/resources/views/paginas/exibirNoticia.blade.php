@@ -31,7 +31,7 @@
                                     Selecione a capa da notícia :
                                 </label>
                                 <br>
-                                <input type="file" name="imagemNoticia" id="imagemUpload" class="text-upload-imagem">
+                                <input id="imagemUpload" name="imagemNoticia" type="file" class="text-upload-imagem">
                             </form>
 
                             <button type="submit" class="btn btn-primary my-3 text-upload-imagem">Enviar Imagem</button>
@@ -43,13 +43,13 @@
                     <div class="col-12 col-md-8 col-xl-6">
 
                         <div class="p-1 mb-4"> 
-                            <input type="hidden" name="type" value="noticia">
-                            <input type="hidden" name="ehAtualizacao" value="1">
-                            <input type="text" name="noticia_titulo" class="mb-2 mt-2 input-titulo form-control" value="{{ $noticiaEspecifica->noticia_titulo }}">
+                            <input name="type" type="hidden" value="noticia">
+                            <input name="ehAtualizacao" type="hidden"  value="1">
+                            <input name="noticia_titulo" type="text" class="mb-2 mt-2 input-titulo form-control" maxlength="40" value="{{ $noticiaEspecifica->noticia_titulo }}">
                         </div>
 
                         <div class="ml-3">
-                            <textarea name="noticia_descricao" class="mt-2 p-1 input-descricao form-control" rows="7" value="Descrição da notícia mesmo">{{ $noticiaEspecifica->noticia_descricao }}</textarea>
+                            <textarea name="noticia_descricao" class="mt-2 p-1 input-descricao form-control" maxlength="300" rows="7" value="Descrição da notícia mesmo">{{ $noticiaEspecifica->noticia_descricao }}</textarea>
                         </div>
 
                     </div>
@@ -84,15 +84,70 @@
                         </div>
 
                     </div>
-                </div>
 
 
-                <div class="d-flex justify-content-end">
-                    <div class="col-12 col-md-11 col-lg-5 col-xl-3 mr-lg-5 mr-md-5 mr-xl-4">
-                        <button type="submit" class="btn btn-primary my-3">Atualizar</button>
+                @if(!empty($noticiaEspecifica->noticia_pathCapa) )
+
+
+                    <!-- Inserir Capa da Notícia -->
+                    <div class="col-12 col-sm-10 col-md-8 col-xl-4 p-3 py-sm-2 py-md-3 p-lg-3 p-xl-2">
+                            <form method="post" enctype="multipart/form-data">
+                                @csrf
+
+                                <label for="imagemUpload" class="text-form">
+                                    Selecione a nova capa da notícia :
+                                </label>
+                                <br>
+                                <input id="imagemUpload" name="imagemNoticia" type="file" class="text-upload-imagem">
+                            </form>
+
+                            <button type="submit" class="btn btn-primary my-3 text-upload-imagem">Atualizar Imagem</button>
+                        </div>
                     </div>
-                </div>
 
+
+                    <!-- Utilidades -->
+                    <div class="col row justify-content-end justify-content-md-start justify-content-xl-around ml-md-0 ml-xl-0 my-3 my-xl-0">
+
+                        <!-- Apenas espaçamento -->
+                        <div></div>
+                        
+                        <!-- Atualização -->
+                        <div class="mr-4 mr-md-4 mr-xl-4 my-md-3 md-lg-0" id="button-atualizacao">
+                            <button type="submit" class="btn btn-primary my-3">Atualizar</button>
+                        </div>
+
+                        <!-- Exclusão -->
+                        <div class="mr-4 mr-md-4 mr-xl-4 my-md-3 md-lg-0" id="button-atualizacao">
+                            <a href="/exibir-noticia/excluir?id={{ $noticiaEspecifica->noticia_id }}" class="my-3 p-1 badge badge-danger">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                @else
+
+
+                    <!-- Utilidades -->
+                    <div class="col row justify-content-end justify-content-md-start justify-content-xl-around ml-md-3 ml-xl-0 my-xl-4">
+                        
+                        <!-- Atualização -->
+                        <div class="mr-4 mr-md-4 mr-lg-5 mr-xl-4 my-md-3 md-lg-0" id="button-atualizacao">
+                            <button type="submit" class="btn btn-primary my-3">Atualizar</button>
+                        </div>
+
+                        <!-- Exclusão -->
+                        <div class="mr-4 mr-md-4 mr-lg-5 mr-xl-4 my-md-3 md-lg-0" id="button-atualizacao">
+                            <a href="/exibir-noticia/excluir?id={{ $noticiaEspecifica->noticia_id }}" class="my-3 p-1 badge badge-danger">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </div>
+                    </div>
+                        
+
+                @endif
+                            
 
             </form>
         </div>
