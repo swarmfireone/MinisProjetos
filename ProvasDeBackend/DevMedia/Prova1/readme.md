@@ -1,10 +1,10 @@
-## Prova para vaga de [Backend Júnior - DevMedia](https://www.youtube.com/watch?v=uoXyCLyWjZ4)
+# Prova para vaga de [Backend Júnior - DevMedia](https://www.youtube.com/watch?v=uoXyCLyWjZ4)
 
 Este projeto foi planejado para atingir as exigências da prova e excedê-las, nele há um CRUD de Notícias e, para cada notícia, há uma vinculação com Categorias no tipo de relação ManyToMany. Ademais, soma-se a possibilidade de se adicionar imagens para a capa da notícia na página inicial  
 
 * * *
 
-## Get Started
+# Get Started
 
 ### As dependências utilizadas foram
 * [PHP](https://www.php.net/manual/en/getting-started.php) ( 8.1.0 )
