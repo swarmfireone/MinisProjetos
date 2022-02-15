@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <strong>30-01-2022 &copy;</strong>
+                    <strong>15-02-2022 &copy;</strong>
                 </div>
             </div>
         </footer>
