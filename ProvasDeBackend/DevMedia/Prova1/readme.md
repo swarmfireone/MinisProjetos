@@ -14,12 +14,12 @@ Este projeto foi planejado para atingir as exigências da prova e excedê-las, n
 * [Laravel](https://laravel.com/docs/8.x/installation) ( laravel/framework v8.81.0 )
 
 * [MySQL](https://dev.mysql.com/doc/mysql-getting-started/en/) ( Configurações usadas para conexão (laravel/.env) :
-  DB_CONNECTION=mysql,
-  DB_HOST=127.0.0.1,
-  DB_PORT=3306,
-  DB_DATABASE=provasbackend_devmedia_prova1,
-  DB_USERNAME=root,
-  DB_PASSWORD=
+<br>   DB_CONNECTION=mysql,
+<br>   DB_HOST=127.0.0.1,
+<br>   DB_PORT=3306,
+<br>   DB_DATABASE=provasbackend_devmedia_prova1,
+<br>   DB_USERNAME=root,
+<br>   DB_PASSWORD=
 )
 
 
